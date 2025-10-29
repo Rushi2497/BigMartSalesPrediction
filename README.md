@@ -17,9 +17,9 @@ Additionally, iterative feature addition/removal/modification was performed by c
 ## Model Training and Optimization
 For model training and optimization, I used optuna, a hyperparameter tuning library which proves to be much faster and efficient than traditional search algorithms. A total of 4 models were evaluated – GradientBoosting, LightGBM, XGBoost and CatBoost.
 
-Due to time constraints, a small number of trials were performed on each with basic data after EDA to finalize a model. XGBoost and CatBoost were found to be the best performing model in terms of leaderboard scores. Both were giving close leaderboard scores with basic feature engineering.
+A small number of trials were performed on each with basic data after EDA to finalize a model. XGBoost and CatBoost were found to be the best performing model in terms of leaderboard scores. Both were giving close leaderboard scores with basic feature engineering.
 
-With the models finalized, I iteratively added/removed/modified some features in the EDA notebook to increase the predictive power of the model. Finally, the final RMSE score I could achieve was ~1143.4 leading to a rank of 112 out of a total of ~53k registered participants. This was ultimately achieved by using CatBoostRegressor and performing a statistically backed output clipping to reduce error.
+With the models finalized, I iteratively added/removed/modified some features in the EDA notebook to increase the predictive power of the model. After extensive hyperparameter tuning, some additional fine tuning on optuna outputs, and statistically backed data clipping, finally, the RMSE score I could achieve was ~1140.88 leading to a rank of 44 out of a total of ~53k registered participants. This was ultimately achieved by using CatBoostRegressor.
 
 ## Key Learnings
 The project reinforced the importance of domain-driven feature engineering — combining retail business insights (e.g., store type and location, product visibility, pricing tiers) with technical modelling rigor significantly improved predictive power. Iterative experimentation and systematic validation were key in refining the final solution. I believe it is possible to further improve the rank, using methods such as stacking different models to capitalize on the strengths of different types of regressors.
